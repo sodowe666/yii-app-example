@@ -1,7 +1,9 @@
 <?php
+
 namespace backend\controllers;
 
 use Yii;
+use yii\filters\Cors;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
@@ -38,6 +40,9 @@ class SiteController extends Controller
                     'logout' => ['post'],
                 ],
             ],
+            'cors' => [
+                'class' => Cors::className()
+            ]
         ];
     }
 
@@ -60,7 +65,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-
+        echo 12313;
         return $this->render('index');
     }
 
@@ -99,4 +104,5 @@ class SiteController extends Controller
 
         return $this->goHome();
     }
+
 }

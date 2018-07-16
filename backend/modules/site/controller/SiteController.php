@@ -27,7 +27,7 @@ class SiteController extends BaseController
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['login', 'error'],
+                        'actions' => ['login', 'error','ws-test'],
                         'allow' => true,
                     ],
                     [
@@ -66,7 +66,6 @@ class SiteController extends BaseController
      */
     public function actionIndex()
     {
-
         return $this->render('index');
     }
 
@@ -115,5 +114,14 @@ class SiteController extends BaseController
         }
         $data['model'] = $model;
         return $this->render($this->action->id,$data);
+    }
+
+    /**
+     * webSocket页面
+     * @return string
+     */
+    public function actionWsTest()
+    {
+        return $this->render($this->action->id);
     }
 }

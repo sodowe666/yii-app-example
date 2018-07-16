@@ -40,7 +40,6 @@ class Admin extends ActiveRecord implements IdentityInterface
      */
     public function behaviors()
     {
-        Html::encode()
         return [
             TimestampBehavior::className(),
         ];
